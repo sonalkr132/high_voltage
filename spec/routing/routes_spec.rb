@@ -9,6 +9,11 @@ describe 'routes' do
     it 'generates a nested route' do
       expect(page_path('one/two')).to eq '/pages/one/two'
     end
+    
+    
+    it 'does not fail with RegexpError: unmatched close parenthesis' do
+      expect(page_path('one/two)')).to eq '/pages/one/two'
+    end
 
     it 'recognizes a route' do
       assert_recognizes(
